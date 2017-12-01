@@ -2,11 +2,13 @@ INPUT = "95134467996366852979296466896829971143167334454515345323517785342514271
 
 # part one
 def collect_pairs(digits)
-  digits.each_with_index.map do |digit, index|
-    next_digit = digits[(index + 1) % digits.length]
-    digit == next_digit ? digit : nil
-  end
-  .compact
+  digits
+    .each_with_index
+    .map do |digit, index|
+      next_digit = digits[(index + 1) % digits.length]
+      digit == next_digit ? digit : nil
+    end
+    .compact
 end
 
 def inverse_captcha(input)
@@ -16,12 +18,14 @@ end
 
 # part two
 def collect_pairs_with_spacing(digits)
-  digits.each_with_index.map do |digit, index|
-    corresponding_index = digits.length / 2
-    next_digit = digits[(index + corresponding_index) % digits.length]
-    digit == next_digit ? digit : nil
-  end
-  .compact
+  digits
+    .each_with_index
+    .map do |digit, index|
+      corresponding_index = digits.length / 2
+      next_digit = digits[(index + corresponding_index) % digits.length]
+      digit == next_digit ? digit : nil
+    end
+    .compact
 end
 
 def inverse_captcha_part_two(input)
